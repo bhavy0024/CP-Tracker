@@ -12,11 +12,7 @@ public:
     string problem_name;
     string difficulty;
     int rating;
-    string topic;
-    bool solved;
-    int time_taken;
     string notes;
-    string revision_date;
 };
 
 #endif
