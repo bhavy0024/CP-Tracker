@@ -1,3 +1,7 @@
 *.exe
 *.o
 *.obj
+*.db
+sqlite3.c
+sqlite3.h
+build/
