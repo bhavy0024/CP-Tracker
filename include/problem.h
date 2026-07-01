@@ -13,6 +13,7 @@ public:
     string difficulty;
     int rating;
     string notes;
+    string revision_date;
 };
 
 #endif

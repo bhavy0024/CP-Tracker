@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
-#include "problem.h"
-#include "database.h"
+#include "../include/database.h"
 using namespace std;
 
 int main()
@@ -19,10 +18,12 @@ int main()
         cout << "2. View Problems\n";
         cout << "3. Search Problem\n";
         cout << "4. Filter by Platform\n";
-        cout << "5. Filter by Difficulty\n";
-        cout << "6. Filter by Rating\n";
+        // cout << "5. Filter by Difficulty\n";
+        cout << "5. Filter by Rating\n";
+        cout << "6. Revision List 🔁\n";
         cout << "7. Show Statistics\n";
-        cout << "8. Exit\n";
+        cout << "8. Export to CSV\n";
+        cout << "9. Exit\n";
         cout << "==============================\n";
         cout << "Enter Choice: ";
 
@@ -50,6 +51,9 @@ int main()
 
             cout << "Enter Notes : ";
             getline(cin, p.notes);
+
+            cout << "Revision Date (YYYY-MM-DD): ";
+            getline(cin, p.revision_date);
             cout << "\nAdding new problem...\n";
             d.insertProblem(p);
         }
@@ -79,16 +83,6 @@ int main()
         }
         if (ch == 5)
         {
-            string difficulty;
-            cin.ignore();
-
-            cout << "Enter difficulty: ";
-            getline(cin, difficulty);
-
-            d.filterByDifficulty(difficulty);
-        }
-        if (ch == 6)
-        {
             int l, r;
 
             cout << "Enter min rating: ";
@@ -99,11 +93,21 @@ int main()
 
             d.filterByRating(l, r);
         }
+        if (ch == 6)
+        {
+            d.showRevisionList();
+            // break;
+        }
         if (ch == 7)
         {
             d.showStats();
         }
         if (ch == 8)
+        {
+            d.exportToCSV();
+        }
+
+        if (ch == 9)
         {
             cout << "\nExiting CP Tracker... Happy Coding! 🚀\n";
             break;
